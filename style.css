@@ -1,0 +1,899 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+}
+
+
+
+.hamburger-icon{
+    position: fixed;
+    top: 1.5rem;
+    right: 4rem;
+    z-index: 3;
+    width: 4rem;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: right 1s; 
+}
+.hamburger-icon span::before{
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    right: 10rem;
+    border-right: 1rem solid rgb(199, 136, 19);
+    border-bottom: 1rem solid transparent;
+    border-top: 1rem solid transparent ;
+    border-left:  1rem solid transparent;
+    opacity: 0;
+    transition: opacity .3s 
+}
+.change .hamburger-icon:hover span::before{
+    opacity: 1;
+}
+.change .hamburger-icon:hover span{
+    opacity: 1;
+}
+.hamburger-icon span{
+    position: absolute;
+    left: 8rem;
+    width: 10rem;
+    height: 3.5rem;
+    background: rgb(199, 136, 19);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; 
+    opacity: 0;
+    transition: opacity .3s ;
+}
+
+
+
+.line{
+    background: rgb(80, 74, 74);
+    width: 100%;
+    height: .5rem;
+    margin: .1rem;
+    
+    
+}
+.change .hamburger-icon{
+    right: 35rem;
+
+}
+
+.change .line-1{
+    transform: rotate(45deg) translate(1.1rem ,.5rem);
+}
+
+.change .line-2{
+    opacity: 0;
+}
+.change .line-3{
+    transform: rotate(-45deg) translate(1.1rem ,-.5rem);
+}
+
+
+.img-wrapper {
+    height:100vh; 
+    overflow: hidden;      
+}
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    animation: scale 15s forwards;
+}
+
+
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+.change .side-bar{
+    right: 0;
+    
+    
+}
+.side-bar{
+    z-index: 2;
+    position: fixed;
+    height: 100vh;
+    right: -40rem;
+    top: 0;
+    background: seashell;
+    width: 40rem;
+    transition: right .5s;
+        
+}
+.social-media{
+    
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    position: absolute;
+    bottom: 2rem;
+    
+    
+}
+.social-media a{
+    font-size: 3rem;
+    background: gray;
+    color: seashell;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    transition: background-color .3s;  
+}
+
+.social-media a:hover{
+    background-color: rgb(199, 136, 19);
+}
+
+
+.menu{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+      
+}
+.menu-item{
+    text-align: center;
+    line-height: 9rem;
+}
+
+.menu-link:hover::before{
+    width: 100%;
+    
+}
+
+.menu-link::before{
+    content: attr(data-content);
+     
+    position: absolute ;
+    font-family: 'Major Mono Display', monospace;
+    color:rgb(199, 136, 19);
+     overflow: hidden;
+     width: 0;
+    transition: width .5s;
+}
+.menu-link{
+    
+    position: relative;
+    font-size: 4.8rem;
+    font-family: 'Major Mono Display', monospace;
+    color: slategrey;      
+}
+.page{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 100rem;
+}
+.details{
+    
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    font-size: 3rem;
+    font-family: 'Major Mono Display', monospace;
+}
+.details h1{
+    animation: moveBanner 1s .4s forwards;
+opacity: 0;
+}
+.details p{
+    margin: 4rem 0rem;
+animation: moveBanner 1s .7s forwards;
+opacity: 0;
+}
+.details button{
+    height: 10vh;
+    width: 17rem;
+    font-family: 'Gayathri', sans-serif;
+    font-size: 2.6rem;
+    border: none;
+    background: rgb(199, 136, 19);
+    box-shadow: 0 0.4rem 0.5rem black;
+    cursor: pointer;
+    border-radius: 2em;
+animation: moveBanner 1.5s .9s forwards;
+opacity: 0;
+transition: background-color .6s;
+outline: none;
+}
+.details button:hover{
+    background-color: seashell;
+    outline: none;
+}
+
+
+@keyframes moveBanner{
+    0%{
+        transform: translateY(40rem) rotateY(-45deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(0);
+        opacity: 1;
+
+    }
+}
+
+.experience{
+    height: 100%;
+    width: 100%;
+    background: gray;
+    padding-bottom: 15rem;
+    
+
+}
+
+.section-header{
+    
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+}
+.heading{
+    font-size: 5rem;
+    font-family:'Major Mono Display', monospace;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+.underline{
+    width: 30%;
+    height: .7rem;
+    background: rgb(199, 136, 19);
+    border-radius: .9rem; 
+}
+
+.fields{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    grid-template-rows: repeat(6,6rem);
+    row-gap: 1rem;
+    text-align: center;
+    
+    
+    
+}
+
+.fields i ,h3{ 
+   
+   display: inline;  
+   
+}
+
+.experience-img{
+    grid-column: 5/12;
+    grid-row: 3/6;
+    
+
+}
+.experience-img img{
+    width:60%;
+    object-fit: cover;
+    
+ 
+}
+    
+
+.field:nth-child(1){
+    grid-column: 2/6;
+    grid-row: 1/4;
+
+}
+.field:nth-child(3){
+    grid-column: 1/5;
+    grid-row: 5/6;
+    
+
+}
+.field:nth-child(2){
+    grid-column: 10/15;
+    grid-row: 2/4;
+
+}
+.field:nth-child(4){
+    grid-column: 12/17;
+    grid-row: 5/7;
+    
+
+}
+.fields h3{
+    font-size: 4rem;
+    font-family:'Major Mono Display', monospace;
+    
+    
+    
+}
+.fields p{
+    font-size: 2rem;
+    font-family: 'Gayathri', sans-serif;
+    margin: 2rem;
+    
+}
+.fields i{
+    font-size: 6rem;
+    margin-right: 1rem;
+    opacity: .6;
+    
+}
+
+.education{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 5rem 20rem 5rem;
+}
+.schools-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.school{
+    width: 30rem;
+    height: 45rem;
+    box-shadow: 0 .8rem 1rem black;
+    border-radius: .5rem;
+
+}
+
+
+.school-info{
+    margin-top: 3rem;
+    font-size: 2rem;
+    font-family: 'Gayathri', sans-serif;
+}
+.school-info h4{
+    margin: 1rem 0 1rem 0;
+}
+
+.school-img-wrapper{
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    
+    
+
+}
+
+.school:hover .school-img-wrapper img{
+    opacity: 1;
+    
+}
+.school-img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+    opacity: .8;
+    transition: opacity .3s;
+    
+    
+}
+
+.contact{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #262626;
+
+}
+.contact-wrapper{
+    width: 80%;
+    height: 65rem;
+    display: flex;
+   position: relative;
+    background: #ffffff;
+    box-shadow: 0 7rem 8rem black;
+    
+}
+
+.contact-left{
+    
+    
+    height: 100%;
+    width: 45%;
+    background: linear-gradient(rgba(15,15,15,0.6), rgba(22,22,22,09)
+    ),url(./img/contactme.jpg)center no-repeat;
+    background-size: cover;
+    
+    
+
+}
+.contact-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(30%);
+    
+    
+    
+}
+.contact-heading{
+    font-size: 7rem;
+    font-family:'Major Mono Display', monospace ;
+    position: absolute;
+    top: 2rem;
+}
+.form-group{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+    flex-direction: column;
+    margin-top: 5rem;
+    font-family:'Gayathri', sans-serif ;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    
+}
+.message{
+    position: absolute;
+    top: 1rem;
+}
+.form-group label{
+    position: absolute;
+    left: 0;
+    bottom: 2.2rem;
+    pointer-events: none;
+    transition: all .4s;
+}
+
+
+
+.contact-field{
+    background-color: transparent;
+    border: none;
+    border-bottom: .2rem dashed #636363;
+    width: 40rem;
+    height: 6rem;
+    max-width: 40rem;
+    max-height: 6rem;
+    font-size: 1.7rem;
+    
+}
+.contact-field:focus{
+    border-bottom-style: solid;
+    outline: none;
+}
+
+.contact-field:focus ~ label {
+    transform: translateY(-70%);
+    font-size: 1.3rem;
+    
+}
+
+   
+
+.submit-btn{
+    width: 100%;
+    padding-top: 1.7rem;
+    padding-bottom: .7rem;
+    font-size: 2.4rem;
+    background: rgb(199, 136, 19);
+    border: none;
+    border-radius: .5rem;
+    font-family:'Gayathri', sans-serif ;
+    text-transform: uppercase;
+    color: ivory;
+    text-shadow: 0 .2rem .6rem black;
+    box-shadow: 0 .2rem .6rem black;
+    margin-top: 3rem;
+    cursor: pointer;
+}
+footer{
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 15rem;
+    background:black ;
+    color: blanchedalmond;
+    font-size: 2.5rem;
+}
+
+
+.footer-media i{
+    
+    padding: 2rem;
+    border-radius: 50%;
+    color: cornsilk;
+}
+.scroll{
+    position: fixed;
+    right: 5rem;
+    bottom: 4rem;
+    background:rgb(199, 136, 19);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.5rem;
+    border-radius: .3rem;
+    box-shadow: 0 0.4rem .8rem black;
+    
+}
+.scroll i{
+    color: cornsilk;
+}
+@media (max-width:1400px){
+
+.field:nth-child(1){
+    grid-column: 2/6;
+    grid-row: 1/4;
+
+}
+.field:nth-child(3){
+    grid-column: 1/5;
+    grid-row: 5/6;
+    
+
+}
+.field:nth-child(2){
+    grid-column: 10/15;
+    grid-row: 1/4;
+
+}
+.field:nth-child(4){
+    grid-column: 11/17;
+    grid-row: 5/7;
+}
+@media (max-width:1300px){
+    .school{
+        width: 25rem;
+        height: 45rem;
+    }
+
+        .contact-right{
+            transform: translateX(10%); 
+            
+        }
+}
+
+
+@media (max-width:1210px) {
+  
+    .fields h3{
+        font-size: 3rem;
+        font-family:'Major Mono Display', monospace;
+        
+        
+        
+    }
+    .fields p{
+        font-size: 2rem;
+        font-family: 'Gayathri', sans-serif;
+        
+        
+    }
+    .fields i{
+        font-size: 2.8rem;
+        margin-right: 1rem;
+        opacity: .6;
+        
+    }
+
+    .school{
+        width: 22rem;
+        height: 45rem;
+    }
+
+
+}
+
+@media (max-width:1100px){
+    .fields{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5rem;
+        width: 100%;
+    }
+    .experience-img img{
+        width:40%;
+        object-fit: cover;}
+
+        .contact-left{
+            width: 0;
+        }
+        .contact-right{
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            transform: translateX(40%);
+        }
+        .contact-heading{
+            font-size: 4rem;
+            top: 7rem;
+        }
+}
+@media (max-width:1000px){
+    .schools-wrapper{
+        flex-direction: column;
+    }
+    .school{
+        width: 50rem;
+        height: 25rem;
+        margin: 7rem 0;
+    }
+}
+
+@media (max-width:800px){
+
+    .contact-right{
+        transform: translateX(0);
+        position: absolute;
+        right: 8rem;
+        
+    }
+    
+    
+    .contact-heading{
+        font-size: 4rem;
+        top: 2rem;
+        right: 9rem;
+        
+    }
+    .contact-wrapper{
+        position: relative
+    }
+    form{
+        margin-top: 17rem;
+        transform: translateX(-20%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+
+}
+
+@media (max-width:700px){
+    .details{
+        font-size: 2rem;
+        left: 10%;
+    }
+    .menu-link{
+        font-size: 3rem;
+    }
+    .menu-item{
+        
+        line-height: 7rem;}
+
+
+    .social-media a{
+        font-size: 2rem;
+        width: 4rem;
+    height: 4rem;
+    
+    }
+    form{
+        transform: translateX(0%);
+        margin-left: 4rem;
+        
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+}
+@media (max-width:600px){
+   
+
+    form{
+        transform: translateX(-70%);
+    width: 100%;
+        
+        
+        
+    }
+   
+    .contact-right{
+        transform: translateX(0);
+        position: absolute;
+        right: 9rem;
+        margin-left: 2rem;
+        
+    }
+    .contact-field{
+        
+        max-width: 13rem;
+    }
+   
+   
+    
+    .submit-btn{
+        width: 60%;
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+    .school{
+        width: 40rem;
+        height: 25rem;
+        margin: 7rem 4rem;
+    }
+    .change .side-bar{
+        width: 100%;
+    }
+    
+}
+@media (max-width:500px) {
+
+    .school{
+        width: 30rem;
+        height: 25rem;
+        margin: 9rem 4rem;
+    }
+    .contact-heading{
+        font-size: 3rem;
+    }
+    .contact-right{
+        
+        position: absolute;
+        right: 5rem;
+    }
+    .scroll{
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.2rem;
+    }
+    form{
+        width: 100%;
+        transform: translateX(-10rem);}
+        
+    
+}
+@media (max-width:400px){
+
+    .change .hamburger-icon{
+        right: 25rem;
+    
+    }
+    .details{
+        font-size: 1.5rem;
+    }
+    .details button{
+        height: 5vh;
+        width: 7rem;
+        font-size: 1.2rem;
+    }
+    .heading{
+        font-size: 3rem;
+    }
+    .hamburger-icon{
+        width: 2rem;
+    height: 1.4rem;
+    }
+    .change .line-1{
+        transform: rotate(45deg) translate(0.2rem ,-0.5rem);
+    }
+    .menu-link{
+        font-size: 2rem;
+    }
+
+    footer{
+        font-size: 1.4rem;
+
+    }
+    .contact-wrapper{
+        height: 80vh;
+        width: 80%;
+    }
+    .contact-right{
+        left: 3rem;
+        width: 80%;
+    }
+    .form-group{
+        font-size: 1rem;
+    }
+    .submit-btn{
+        width: 7rem;
+        height: 2rem;
+        font-size: 1rem;
+        padding: .5rem;
+    }
+    form{
+        font-size: 1rem;
+        margin-top: 5rem;
+    }
+   
+}
+@media (max-width:300px){
+    .details{
+        font-size: 1.3rem;
+        left: 0%;
+    }
+    .change .hamburger-icon{
+        right: 20rem;}
+        .heading{
+            font-size: 2rem;
+        }
+        .fields h3{
+            font-size: 1.5rem;
+        }
+        .school{
+            width: 15rem;
+            height: 25rem;
+            margin: 12rem 4rem;}
+            .contact-right{
+                width: 40%;
+            }
+            .contact-heading{
+                font-size: 1.8rem;
+                right: 1rem;
+            }
+
+            .form-group{
+                font-size: 1rem;
+                width: 100%;
+                
+            }
+            
+            form{
+                width: 100%;
+                transform: translateX(0rem);
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                
+            }
+            .submit-btn{
+                width: 8rem;
+                height: 2rem;
+                font-size: 1rem;
+                padding: 0.5rem;
+            }
+            
+            .contact-field{
+                width: 13rem;
+            }
+            textarea{
+                width: 13rem;
+            }
+}
