@@ -537,8 +537,8 @@ footer{
     color: cornsilk;
 }
 .scroll{
-    position: fixed;
-    right: 5rem;
+    position: sticky;
+    right: 130rem;
     bottom: 4rem;
     background:rgb(199, 136, 19);
     display: flex;
